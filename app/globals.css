@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;/* global.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+
+.home-page {
+  background-image: url('/image.jpg');
+  background-position: center;
+  background-size: cover;
+}
+.menu-page {
+  @apply bg-primary-dark;
+}
+.header-text {
+  @apply text-2xl;
+}
+h1 {
+  @apply font-heading;
+}
+p {
+  @apply font-body;
+}
+/* :root {
+  @apply
+
+  --primary: bg-
+  --secondary: #A1CAE2
+  --ternary: #fff;
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+.checkbox{
+  @apply w-32 h-auto;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+/* ซ่อน scrollbar แต่เนื้อหาสามารถเลื่อนได้ */
+.scrollable {
+  overflow: auto;
+  scrollbar-width: none; /* สำหรับ Firefox */
+}
+
+/* สำหรับ WebKit (Chrome, Safari) */
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* container query */
+.container {
+  container-type: inline-size;
+  margin: auto;
+}
+.menu-icon {
+  display: none;
+}
+
+.menu-btn,
+ .menu-icon, 
+ .logo{
+  cursor: pointer;
+  @apply duration-200;
+}
+.menu-container > .menu-btn:hover, .menu-icon:hover {
+  @apply text-primary brightness-125;
+}
+.product-container {
+  cursor: pointer;
+  @apply w-[300px] h-[350px] duration-200 bg-primary-dark;
+}
+.product-container:hover {
+  @apply brightness-105 bg-primary;
+}
+.product-name {
+  @apply text-2xl;
+}
+.filter-container > * {
+  @apply text-primary;
+}
+.filter {
+  @apply rounded-md;
+}
+.contact-btn{ 
+  @apply duration-200;
+}
+.contact-btn:hover {
+  @apply brightness-125;
+}
+@container (width<=800px) and (width>400px){
+
+}
+
+@container (width<=400px) {
+  .menu-container {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+  }
+}
+
+@media only screen and (max-width:900px) {
+  h1 {
+    @apply text-lg;
+  }
+  p {
+    @apply text-sm;
+  }
+  .home-page {
+    background-position: right;
+    background-size: cover;
+  }
+  .filter-container {
+    display: none;
+  }
+  .product-container {
+    @apply w-[200px] h-[250px];
+  }
+  .about-container {
+    @apply flex-col
+  }
+  .about-element {
+    @apply w-full;
+  }
+  .about-element-2 {
+    @apply flex-row;
+  }
+  
+  .about-element-2-1 {
+    @apply h-full;
+  }
+  .outer-container {
+    @apply px-5;
+  }
+  .thank-text {
+    @apply text-5xl;
+  }
+  .outer-product-container {
+    @apply w-full;
+  }
+}
+@media only screen and (max-width:600px) {
+  .product-container {
+    @apply w-[100px] h-[150px];
+  }
+  .outer-product-container {
+    @apply w-full;
+  }
+  .product-name {
+    @apply text-xs;
+  }
+  .outer-container {
+    @apply px-2;
+  }
+  .about-element-2 {
+    @apply flex-col;
+  }
+  .element-middle-1 {
+    @apply w-full;
+  }
+  .thank-text {
+    @apply text-3xl;
+  }
+}
